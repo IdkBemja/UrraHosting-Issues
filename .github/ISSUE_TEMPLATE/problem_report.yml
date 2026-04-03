@@ -1,0 +1,96 @@
+name: ⚠️ Problem Report
+description: Reporta un problema en la plataforma UrraHosting (degradación, proceso fallido, comportamiento anómalo, etc.).
+title: "[Problem]: "
+labels: ["problem"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por reportar este problema. Completa todos los campos para que podamos investigarlo y resolverlo lo antes posible.
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Nivel de severidad
+      description: ¿Cuál es el impacto de este problema?
+      options:
+        - "🔴 Crítico — El servicio está caído o completamente inutilizable"
+        - "🟠 Alto — Una funcionalidad principal está gravemente afectada"
+        - "🟡 Medio — Una funcionalidad está afectada pero hay forma de continuar"
+        - "🟢 Bajo — Problema menor o cosmético que no bloquea el uso"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción del problema
+      description: Describe con claridad qué está ocurriendo y cuál es el comportamiento esperado.
+      placeholder: |
+        **¿Qué ocurre?**
+        ...
+
+        **¿Qué debería ocurrir?**
+        ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: how_it_happens
+    attributes:
+      label: ¿Cómo ocurre esto?
+      description: Explica en qué contexto o bajo qué condiciones se presenta el problema.
+      placeholder: |
+        Por ejemplo:
+        - Ocurre al intentar crear un nuevo proyecto.
+        - Se presenta de forma intermitente cada cierto tiempo.
+        - Sucede únicamente cuando hay muchos usuarios conectados.
+    validations:
+      required: true
+
+  - type: textarea
+    id: detection_tools
+    attributes:
+      label: Herramientas utilizadas para detectar el problema
+      description: |
+        Indica qué herramientas, métricas o métodos usaste para identificar o confirmar este problema.
+        Por ejemplo: consola del navegador, herramientas de red (DevTools), monitoreo, logs del sistema, pruebas manuales, etc.
+      placeholder: |
+        - DevTools de Chrome (pestaña Network / Console)
+        - Logs del servidor / panel de control
+        - Herramienta de monitoreo (Uptime Robot, Datadog, etc.)
+        - Prueba manual reproducible
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidencias
+      description: |
+        Adjunta capturas de pantalla, videos, extractos de logs u otros archivos que respalden el problema.
+        Puedes arrastrar archivos directamente aquí.
+      placeholder: Pega o arrastra aquí capturas, logs u otras evidencias...
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL afectada (si aplica)
+      description: ¿En qué URL de UrraHosting se presenta el problema?
+      placeholder: "https://urrahosting.cl/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Entorno
+      description: Proporciona información sobre el entorno en el que se detectó el problema.
+      placeholder: |
+        - Navegador: Chrome 123 / Firefox 124 / Safari 17
+        - Sistema operativo: Windows 11 / macOS 14 / Ubuntu 22.04
+        - Dispositivo: Desktop / Mobile (modelo)
+    validations:
+      required: false

@@ -1,0 +1,81 @@
+name: 🐛 Bug Report
+description: Reporta un error o comportamiento inesperado en UrraHosting.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por tomarte el tiempo de reportar un bug. Completa todos los campos para que podamos reproducirlo y solucionarlo lo antes posible.
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Nivel de severidad
+      description: ¿Cuál es el impacto de este bug?
+      options:
+        - "🔴 Crítico — El servicio está caído o completamente inutilizable"
+        - "🟠 Alto — Una funcionalidad principal está gravemente afectada"
+        - "🟡 Medio — Una funcionalidad está afectada pero hay forma de continuar"
+        - "🟢 Bajo — Problema menor o cosmético que no bloquea el uso"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción del bug
+      description: Describe claramente qué ocurre y cuál es el comportamiento esperado.
+      placeholder: |
+        **¿Qué ocurre?**
+        ...
+
+        **¿Qué debería ocurrir?**
+        ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducirlo
+      description: Lista los pasos exactos para reproducir el bug.
+      placeholder: |
+        1. Ir a '...'
+        2. Hacer clic en '...'
+        3. Desplazarse hacia '...'
+        4. Ver el error
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidencias
+      description: |
+        Adjunta capturas de pantalla, videos, logs o cualquier otro material que ayude a entender el bug.
+        Puedes arrastrar archivos directamente aquí.
+      placeholder: Pega o arrastra aquí capturas, logs u otras evidencias...
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL afectada (si aplica)
+      description: ¿En qué URL de UrraHosting ocurre el bug?
+      placeholder: "https://urrahosting.cl/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Entorno
+      description: Proporciona información sobre el entorno en el que ocurre el bug.
+      placeholder: |
+        - Navegador: Chrome 123 / Firefox 124 / Safari 17
+        - Sistema operativo: Windows 11 / macOS 14 / Ubuntu 22.04
+        - Dispositivo: Desktop / Mobile (modelo)
+    validations:
+      required: false
